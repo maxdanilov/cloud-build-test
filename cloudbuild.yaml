@@ -1,0 +1,5 @@
+steps:
+- name: 'ubuntu'
+  args: ['bash', './script.sh']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['ps', '-a']
