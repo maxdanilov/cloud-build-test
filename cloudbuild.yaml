@@ -18,8 +18,8 @@ steps:
     path: /data
 
 - name: 'ubuntu'
-  args: ['sleep', '10']
+  args: ['bash', '-c', 'date && sleep 15 && date']
 - name: 'ubuntu'
-  args: ['sleep', '15']
+  args: ['bash', '-c', 'date && sleep 15 && date']
   waitFor:
     - '-'
