@@ -4,10 +4,22 @@ steps:
   volumes:
   - name: 'data'
     path: /data
+  - name: 'data2'
+    path: /data2
 - name: 'gcr.io/cloud-builders/docker'
   args: ['ps', '-a']
+  volumes:
+  - name: 'data2'
+    path: /data2
 - name: 'ubuntu'
-  args: ['bash', 'cat /data/date.txt']
+  args: ['bash', '-c', 'cat /data/date.txt']
   volumes:
   - name: 'data'
     path: /data
+
+- name: 'ubuntu'
+  args: ['sleep', '10']
+- name: 'ubuntu'
+  args: ['sleep', '15']
+  waitFor:
+    - '-'
