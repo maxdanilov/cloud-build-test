@@ -19,7 +19,9 @@ steps:
 
 - name: 'ubuntu'
   args: ['bash', '-c', 'date && sleep 15 && date']
+  id: 'sleepy 1'
 - name: 'ubuntu'
   args: ['bash', '-c', 'date && sleep 15 && date']
+  id: 'sleepy 2'
   waitFor:
     - '-'
