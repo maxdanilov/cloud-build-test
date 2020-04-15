@@ -1,5 +1,13 @@
 steps:
 - name: 'ubuntu'
   args: ['bash', './script.sh']
+  volumes:
+  - name: 'data'
+    path: /data
 - name: 'gcr.io/cloud-builders/docker'
   args: ['ps', '-a']
+- name: 'ubuntu'
+  args: ['bash', 'cat /data/date.txt']
+  volumes:
+  - name: 'data'
+    path: /data
